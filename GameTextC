@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char ch;
+    char arg[100];
+
+    printf("What is your name?\n");
+    scanf(" %s", arg); // Read a string
+
+    printf("Hello, %s! Welcome to the text-based adventure game!\n", arg);
+    printf("You are in a dark forest. You see a path to the left and a path to the right.\n");
+    printf("Which path do you take? (left/right)\n");
+    scanf(" %c", &ch); // Consume newline character
+
+    if (ch == 'l' || ch == 'L') {
+        printf("You follow the woods but suddenly hear screams from a distinct point. You are scared but you keep up with yourself. You see a giant bear coming towards you. You can either run or fight. What do you do? (R/F)\n");
+        scanf(" %c", &ch); // Consume newline character
+
+        if (ch == 'r' || ch == 'R') {
+            printf("You run away from the bear still hearing his footsteps coming towards you. You saw a tree and immediately your adrenaline pushes you to climb up the tree. You stay there for hours, waiting for the bear to leave. He finally leaves but it is getting too dark. You need to climb down the tree. You can either climb down or stay there. What do you do? (C/S)\n");
+            scanf(" %c", &ch); // Consume newline character
+
+            if (ch == 'c' || ch == 'C') {
+                printf("For the night you arrange woods to keep yourself warm and keep the wild creatures away from you. You are hungry but you are tired. You can either eat the berries or sleep. What do you do? (E/S)\n");
+                scanf(" %c", &ch); // Consume newline character
+
+                if (ch == 'e' || ch == 'E') {
+                    printf("You eat the berries which made you feel a little better. Now you clean the ground and fall asleep with the burning fire. You are woken up by the scorching heat and the sound of insects. You are thirsty and try to hear the sound of water. After walking for a while you hear two sounds one from north which is of water and another one from south is a scream. What would you do? (N/S)\n");
+                    scanf(" %c", &ch); // Consume newline character
+
+                    if (ch == 'n' || ch == 'N')
+                        printf("You drink the water. It is fresh and saw someone sitting near it. You go to them and greet them. The person is from a nearby village. You are saved. Congratulations! Now you can go home. You won the game!\n");
+                    else
+                        printf("You hear the screams growling but you keep on following it. There is a bear again, the same one but a little girl is asking for help. You help her and took her in your arms. Finding a way to trick the bear. The girl guides you to a village and you are saved. Congratulations! Now you can go home. You won the game!\n");
+                }
+            }
+        }
+    } else if (ch == 'r' || ch == 'R') {
+        printf("You follow the path to the right and reach towards a cave. The cave is near a meadow. You can either stay in the cave or continue your journey leading towards a valley. What do you do? (C/V)\n");
+        scanf(" %c", &ch); // Consume newline character
+
+        if (ch == 'c' || ch == 'C') {
+            printf("You stay in the cave. The air is cold outside but with fire burning inside the cave you feel safe. You fell asleep and woke up to the sight of a bird looking at you. She looks at you with curiosity and take you towards the meadow where you hear a screeching noise. You see the winds blowing and making little tornado. Finally you see a helicopter, you can grab the attention or stay in the cave forever. What do you do? (G/S)\n");
+            scanf(" %c", &ch); // Consume newline character
+
+            if (ch == 'g' || ch == 'G')
+                printf("Congratulations! You won the game!\n");
+            else
+                printf("You stay in the cave forever. You are now a human of the cave with the bird as your friend. Helping the animals and growing their food. You are now a cave dweller. You won the game!\n");
+        } else if (ch == 'v' || ch == 'V')
+            printf("You continue your journey towards the valley but the slope is steep. You trip and fall. You are dead.\n");
+        else
+            printf("Invalid choice!\n");
+    } else {
+        printf("Invalid choice!\n");
+    }
+    return 0;
+}
